@@ -1,0 +1,32 @@
+<hr>
+  <form (ngSubmit)="onAdd()">
+  <div class="col-md-30 offset-md-2">
+
+        <table>
+            <tr>
+            <img src="/assets{{book.ImageUrl}}" width="100" height="100" />
+            <li><b>{{book.Title}}</b></li>
+            <li>Author :<b>{{book.Author}}</b></li>
+            <!-- <li>Description :<i>{{book.Description}}</i></li>-->
+            <li>Price :{{book.Price| currency:"INR"}}</li>
+            <!-- <li>Quantity :{{book.Quantity}}</li><br>-->
+
+          <div class="row">
+            <div class="col" class="input-field col s6">
+              <table>
+                <tr>
+                  Quantity : <input type="number" name="quantity" [(ngModel)]="quantity">
+                  Total : <input type="number" name="total" [ngModel]="total" (click)="sum(book.Price,quantity)">
+                </tr>
+                <tr>
+                 <td><button class="btn btn-primary" type="submit"  >Add</button></td>
+                 <td><button class="btn btn-primary" type="submit" >Remove</button></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+            </tr>
+        </table>
+  </div>
+</form>
+

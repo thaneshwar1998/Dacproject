@@ -1,0 +1,84 @@
+
+
+<div class="jumbotron">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-6">
+              <h3>Payment Details</h3>
+
+         <!-- <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Success !</strong> You Logged In Successfully !!!!!
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>-->
+                  <b>Total Amount : {{ProductName |currency:"INR"}}</b>
+              <form name="form" [formGroup]="form" (ngSubmit)="payNow()" >
+                <label>
+                  <input type="radio" value="online" formControlName="form" (click)="toggleOn =!toggleOn">
+                    <span>Pay Now</span>
+                </label>
+                <label>
+                  <input type="radio" value="offline" formControlName="form" (click)="shippingForm()">
+                    <span>Cash On Delivery</span>
+                </label>
+                <div *ngIf="!toggleOn">
+                <div class="icon-container">
+                  <label for="fname">Accepted Cards</label>
+                  <i class="fa fa-cc-visa" style="color:navy;"></i>
+                  <i class="fa fa-cc-amex" style="color:blue;"></i>
+                  <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                  <i class="fa fa-cc-discover" style="color:orange;"></i>
+                </div>
+
+                  <div class="form-group">
+                    <label><b>Name On Card</b></label>
+                    <input type="text" class="form-control"  name="Name" [ngModel]="payment.Name"  required>
+                </div>
+                  <div class="form-group">
+                      <label><b>Card Number</b></label>
+                      <input type="number" class="form-control"  name="CardNumber"  [ngModel]="payment.CardNumber"  required>
+                  </div>
+                  <div class="form-group">
+                    <label><b>CVV</b></label>
+                    <input type="password" class="form-control"  name="CVV" [ngModel]="payment.CVV"   required>
+                  </div>
+                <div class="form-group">
+                  <label><b>Pin</b></label>
+                  <input type="password" class="form-control"  name="Pin"  required>
+                </div>
+                <!--<div class="form-group">
+                  <label><b>Amount</b></label>
+                  <input type="number" class="form-control"   name="ProductName"  (ngModel)="ProductName"  required>
+                </div>-->
+                  <div class="form-group">
+                      <button class="btn btn-success" type="submit" >Submit</button> &nbsp; &nbsp;
+                      <button class="btn btn-danger" >Cancel</button>
+
+                  </div>
+                </div>
+              </form>
+
+          </div>
+
+      </div>
+
+  </div>
+
+</div>
+
+
+<!--
+<div align="center" >
+  <div class="form-group">
+      <label><b>Username : </b></label>
+      <input ngModel  type="email" placeholder="Enter Email" name="email" required><br><br>
+  </div>
+  <div class="form-group">
+  <label><b>Password : </b></label>
+  <input type="password" placeholder="Enter Pasword" name="password" required><br><br>
+  </div>
+  <button type="submit">Login</button> &nbsp;&nbsp;<button type="reset">Reset</button>
+
+</div>-->
+

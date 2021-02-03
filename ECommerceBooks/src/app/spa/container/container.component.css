@@ -1,0 +1,28 @@
+
+.dropdown-menu{
+  color: black;
+}
+
+.cart_icon
+{
+  position: relative;
+}
+
+.cart_icon i
+{
+  font-size: 24px;
+  color:brown
+
+}
+.cart_value
+{
+  position: absolute;
+  top:-16px;
+  right:-32px;
+  background: coral;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  padding:4px 10px;
+  font-weight: 800;
+  font-size: 16px;
+}

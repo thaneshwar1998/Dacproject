@@ -1,0 +1,66 @@
+<div class="row">
+  <div class="col s8 offset-s2">
+      <div class="card">
+          <div class="sm-jumbotron center-align">
+           <h2>Update Book</h2>
+          </div>
+          <form class="col s12 white" #bookFrom="ngForm" (ngSubmit) = "onSubmit()" >
+              <div class="row">
+                  <div class="input-field col s6">
+                  <label><b>Title</b></label>
+                  <input type="text" class="form-control"  name="Title" [(ngModel)]="book.Title" required>
+                  </div>
+                  <div class="input-field col s6">
+                      <label><b>Author</b></label>
+                      <input type="text" class="form-control" name="Author" [(ngModel)]="book.Author" required>
+                  </div>
+              </div>
+
+              <div class="row">
+                  <div class="input-field col s6">
+                      <label><b>Category</b></label>
+                      <input type="text" class="form-control"   name="Category" [(ngModel)]="book.Category" required>
+                  </div>
+                  <div class="input-field col s6">
+                      <label><b>Language</b></label>
+                      <input  type="text" class="form-control" name="Language"  [(ngModel)]="book.Language" required>
+                  </div>
+              </div>
+
+              <div class="row">
+                  <div class="input-field col s6">
+
+                      <label><b>Price</b></label>
+                      <input type="number" class="form-control"   name="Price" [(ngModel)]="book.Price" required>
+                  </div>
+                  <div class="input-field col s6">
+                      <label><b>Quantity</b></label>
+                      <input type="number" class="form-control"   name="Quantity" [(ngModel)]="book.Quantity" required>
+                  </div>
+              </div>
+
+              <div class="row">
+                  <div class="input-field col s6">
+
+                      <label><b>Rating</b></label>
+                      <input type="number" class="form-control"   name="Rating" [(ngModel)]="book.Rating" required>
+                  </div>
+                  <div class="input-field col s6">
+                      <label><b>Condition</b></label>
+                      <input type="text" class="form-control"   name="Condition" [(ngModel)]="book.Condition" required>
+                  </div>
+              </div>
+
+             <div class="row">
+              <div class="input-field col s6">
+                  <button class="btn btn-primary" type="submit">UPDATE</button>
+
+              </div>
+
+             </div>
+
+          </form>
+      </div>
+  </div>
+
+</div>

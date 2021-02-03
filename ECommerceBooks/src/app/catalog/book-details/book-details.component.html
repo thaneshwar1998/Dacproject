@@ -1,0 +1,40 @@
+<div>
+
+    <h2  class="center-align">Book List</h2>
+
+  <div>
+    <table id="book">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Price</th>
+          <th>Quantity </th>
+          <th>Category</th>
+          <th>Language</th>
+          <th>Rating</th>
+          <th>Condition</th>
+
+
+         <th></th>
+          <th></th>
+        </tr>
+      </thead>
+         <tr *ngFor="let book of book" >
+          <td>{{book.ID}}</td>
+          <td>{{book.Title}}</td>
+          <td>{{book.Author}}</td>
+          <td>{{book.Price}}</td>
+          <td>{{book.Quantity}}</td>
+          <td>{{book.Category}}</td>
+          <td>{{book.Language}}</td>
+          <td>{{book.Rating}}</td>
+          <td>{{book.Condition}}</td>
+
+          <td><button class="btn btn-5" (click)="updateBook(book.ID)">update</button></td>
+          <td><button class="btn btn-5" (click)="deleteBook(book.ID)">delete</button></td>
+          </tr>
+     </table>
+  </div>
+</div>

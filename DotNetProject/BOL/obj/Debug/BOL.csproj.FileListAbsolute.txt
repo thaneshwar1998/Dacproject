@@ -1,0 +1,5 @@
+C:\Users\swapn\source\repos\DotNetProject\BOL\bin\Debug\BOL.dll
+C:\Users\swapn\source\repos\DotNetProject\BOL\bin\Debug\BOL.pdb
+C:\Users\swapn\source\repos\DotNetProject\BOL\obj\Debug\BOL.csproj.CoreCompileInputs.cache
+C:\Users\swapn\source\repos\DotNetProject\BOL\obj\Debug\BOL.dll
+C:\Users\swapn\source\repos\DotNetProject\BOL\obj\Debug\BOL.pdb

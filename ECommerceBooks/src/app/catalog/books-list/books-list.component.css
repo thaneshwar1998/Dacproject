@@ -1,0 +1,13 @@
+#wrapper {
+  width: 500px;
+  border: 1px solid black;
+  overflow: hidden; /* will contain if #first is longer than #second */
+}
+
+#footer {
+  position: absolute;
+  bottom: 0px;
+  background-color: aquamarine;
+  width: 100%;
+  text-align: center;
+}

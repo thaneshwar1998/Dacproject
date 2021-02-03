@@ -1,0 +1,75 @@
+
+<div class="form-group">
+  <label for="category1">Category</label>
+  <select id="category1" name="category1" [(ngModel)]="category1" class="form-control">
+    <option value="General" >General</option>
+    <option value="Fiction">Fiction</option>
+    <option value="Non-Fiction">Non-Fiction</option>
+    <option value="Autobiography">Autobiography</option>
+
+
+  </select>
+
+  <button (click)="OnSearch(category1)">Search</button>
+</div>
+
+
+
+
+<!--
+<div>
+  <input type="search" placeholder="Search Books" name="search" [(ngModel)]="search" />
+    <button (click)="OnSearch(search)">Search</button>
+</div>
+
+
+
+<div *ngIf="!flag1">
+
+
+<ul  *ngFor="let book1 of data">
+  <div  class="col-md-30 offset-md-2">
+
+        <table>
+            <tr>
+            <img src="/assets{{book1.ImageUrl}}" width="100" height="100" />
+            <li><b>{{book1.Title}}</b></li>
+            <li>Category :<b>{{book1.Category}}</b></li>
+            <li>Author :<b>{{book1.Author}}</b></li>
+             <li>Description :<i>{{book1.Description}}</i></li>
+            <li>Price :{{book1.Price| currency:"INR"}}</li>
+
+          <div class="row">
+            <div class="col" class="input-field col s6">
+
+            </div>
+          </div>
+            </tr>
+        </table>
+  </div>
+</ul>
+</div>-->
+
+<div>
+  <div class="col-md-30 offset-md-2">
+
+    <table>
+        <tr>
+        <img src="/assets{{data1.ImageUrl}}" width="100" height="100" />
+        <li><b>{{data1.Title}}</b></li>
+        <li>Category :<b>{{data1.Category}}</b></li>
+        <li>Author :<b>{{data1.Author}}</b></li>
+         <li>Description :<i>{{data1.Description}}</i></li>
+        <li>Price :{{data1.Price| currency:"INR"}}</li>
+
+      <div class="row">
+        <div class="col" class="input-field col s6">
+
+        </div>
+      </div>
+        </tr>
+    </table>
+</div>
+
+
+

@@ -1,0 +1,54 @@
+
+
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h3>User Login</h3>
+                <form [formGroup]="loginform" (ngSubmit)="verifyUserLogin()" >
+                      <div class="form-group">
+                          <label><b>User Name</b></label>
+                          <input type="email" class="form-control"  formControlName="UserName" name="email"
+                           [ngClass]="{'is-invalid':loginform.get('UserName').touched && loginform.get('UserName').invalid}" placeholder="abc@gmail.com" [(ngModel)]="login.UserName" required/>
+                          <div *ngIf="loginform.get('UserName').touched && loginform.get('UserName')?.invalid" class="invalid-feedback"></div>
+                          <div class="text-danger" *ngIf="loginform.get('UserName').errors?.required">Email is Required</div>
+                      </div>
+
+                    <div class="form-group">
+                        <label><b>Password</b></label>
+                        <input type="password" class="form-control" formControlName="Password" pattern="^[a-zA-Z0-9]+$"  name="password"
+                        [ngClass]="{'is-invalid':loginform.get('Password').touched && loginform.get('Password').invalid}"  minlength="5" placeholder="Minimum length 5 Characters" [(ngModel)]="login.Password" required/>
+                        <div *ngIf="loginform.get('Password').touched && loginform.get('Password')?.invalid" class="invalid-feedback"></div>
+                        <div  class="text-danger" *ngIf="loginform.get('Password').errors?.required">Password is Required </div>
+
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-success" [disabled]="!loginform.valid" >Login</button> &nbsp; &nbsp;
+                        <button class="btn btn-danger" >Cancel</button> &nbsp;&nbsp;
+
+                    </div>
+                    <div class="form-group">
+                      <button class="btn btn-success"><a href="/register">New User</a></button>
+                    </div>
+                  </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<!--
+<div align="center" >
+    <div class="form-group">
+        <label><b>Username : </b></label>
+        <input ngModel  type="email" placeholder="Enter Email" name="email" required><br><br>
+    </div>
+    <div class="form-group">
+    <label><b>Password : </b></label>
+    <input type="password" placeholder="Enter Pasword" name="password" required><br><br>
+    </div>
+    <button type="submit">Login</button> &nbsp;&nbsp;<button type="reset">Reset</button>
+
+</div>-->

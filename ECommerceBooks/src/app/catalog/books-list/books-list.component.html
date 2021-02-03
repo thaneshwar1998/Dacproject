@@ -1,0 +1,51 @@
+<h1>Books Available</h1>
+<!--{{data|json}}-->
+<hr/>
+<div class="row">
+
+
+  <ul *ngFor="let book of data">
+    <div class="col-md-30 offset-md-2">
+
+          <table>
+              <tr>
+              <img src="/assets{{book.ImageUrl}}" width="100" height="100" />
+              <li><b>{{book.Title}}</b></li>
+              <li>Author :<b>{{book.Author}}</b></li>
+              <!-- <li>Description :<i>{{book.Description}}</i></li>-->
+              <li>Price :{{book.Price| currency:"INR"}}</li>
+              <!-- <li>Quantity :{{book.Quantity}}</li><br>-->
+            <div class="row">
+              <div class="col" class="input-field col s6">
+                <table>
+                  <tr>
+                   <td><button class="btn btn-primary" type="submit" (click)="insideCart(book.ID)" >AddToCart</button></td>
+                   <td><button class="btn btn-primary" type="submit" (click)="BuyBook(book.ID)">Buy</button></td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+              </tr>
+          </table>
+    </div>
+  </ul>
+
+  <div id="footer">
+    &copy;  Copyright 2020-2021 www.BuyUsedBooks.com. All rights reserved. Developed by BuyUsedBooks.
+</div>
+</div>
+
+
+<!--<div *ngFor="let book of books">
+    <app-book-details   [id]="book.id"
+                        [title]="book.title"
+                        [author]="book.author"
+                        [description]="book.description"
+                        [price]="book.price"
+                        [imageUrl]="book.imageUrl"
+                        [quantity]="book.quantity">
+
+    </app-book-details>
+</div>-->
+
+

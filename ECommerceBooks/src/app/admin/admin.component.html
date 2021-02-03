@@ -1,0 +1,34 @@
+<h1>Admin Page</h1>
+<hr>
+<button class="btn btn-primary" [disabled]="flag1" type="submit" (click)="toggleCollapse1()">Customer</button> &nbsp; &nbsp;
+<button class="btn btn-primary"  type="submit" (click)="toggleCollapse2()">Books</button>
+<table id="data" *ngIf="!flag">
+    <tr>
+        <th *ngFor="let col of columns">
+            {{col}}
+        </th>
+    </tr>
+    <tr *ngFor="let d of data">
+        <td *ngFor="let col of index">
+            {{d[col]}}
+
+        </td>
+        <td><button class="btn btn-5" >update</button></td>
+        <td><button class="btn btn-5" >delete</button></td>
+    </tr>
+</table>
+<table id="data1" *ngIf="!flag1">
+  <tr>
+      <th *ngFor="let col of book">
+          {{col}}
+      </th>
+  </tr>
+  <tr *ngFor="let d of data">
+      <td *ngFor="let col of bookindex">
+          {{d[col]}}
+
+      </td>
+      <td><button class="btn btn-5" >update</button></td>
+          <td><button class="btn btn-5" >delete</button></td>
+  </tr>
+</table>

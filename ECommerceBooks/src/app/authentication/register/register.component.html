@@ -1,0 +1,85 @@
+
+
+<div class="jumbotron">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-6">
+              <h2>New User Registeration</h2>
+              <form [formGroup]="registerForm" (ngSubmit)="AddCustomer()" >
+                    <div class="form-group">
+                        <label><b>Name</b></label>
+                        <input type="text" class="form-control"  formControlName="Name" name="Name"
+                         [ngClass]="{'is-invalid':registerForm.get('Name')?.touched && registerForm.get('Name')?.invalid}" placeholder="xyz" [(ngModel)]="Customer.Name" required/>
+                        <div *ngIf="registerForm.get('Name')?.touched && registerForm.get('Name')?.invalid" class="invalid-feedback"></div>
+                        <div class="text-danger" *ngIf="registerForm.get('Name').errors?.required">Name is Required</div>
+                    </div>
+                    <div class="form-group">
+                      <label><b>Email</b></label>
+                      <input type="email" class="form-control"  formControlName="Email" name="Email"
+                       [ngClass]="{'is-invalid':registerForm.get('Email').touched && registerForm.get('Email').invalid}" placeholder="abc@gmail.com" [(ngModel)]="Customer.Email" required/>
+                      <div *ngIf="registerForm.get('Email').touched && registerForm.get('Email')?.invalid" class="invalid-feedback"></div>
+                      <div class="text-danger" *ngIf="registerForm.get('Email').errors?.required">Email is Required</div>
+                    </div>
+
+                  <div class="form-group">
+                      <label><b>Password</b></label>
+                      <input type="password" class="form-control" formControlName="Password"   name="password"
+                      [ngClass]="{'is-invalid':registerForm.get('Password').touched && registerForm.get('Password').invalid}"  minlength="5" placeholder="Minimum length 5 Characters" [(ngModel)]="Customer.Password" required/>
+                      <div *ngIf="registerForm.get('Password').touched && registerForm.get('Password')?.invalid" class="invalid-feedback"></div>
+                      <div class="text-danger" *ngIf="registerForm.get('Password').errors?.required">Password is Required </div>
+                  </div>
+                  <div class="form-group">
+                    <label><b>Confirm Password</b></label>
+                    <input type="password" class="form-control" formControlName="Password"   name="password"
+                    [ngClass]="{'is-invalid':registerForm.get('Password').touched && registerForm.get('Password').invalid}"  minlength="5" placeholder="Minimum length 5 Characters" [(ngModel)]="Customer.Password" required/>
+                    <div *ngIf="registerForm.get('Password').touched && registerForm.get('Password')?.invalid" class="invalid-feedback"></div>
+                    <div class="text-danger" *ngIf="registerForm.get('Password').errors?.required">Not Matched </div>
+                </div>
+                <div class="form-group">
+                  <label><b>Address</b></label>
+                  <input type="text" class="form-control"  formControlName="Address" name="Address"
+                   [ngClass]="{'is-invalid':registerForm.get('Address').touched && registerForm.get('Address').invalid}" placeholder="ex.Chandrapur" [(ngModel)]="Customer.Address" required/>
+                  <div *ngIf="registerForm.get('Address').touched && registerForm.get('Address')?.invalid" class="invalid-feedback"></div>
+                  <div class="text-danger" *ngIf="registerForm.get('Address').errors?.required">Address is Required</div>
+                </div>
+                <div class="form-group">
+                  <label><b>Mobile Number</b></label>
+                  <input type="number" class="form-control"  formControlName="ContactNumber" name="ContactNumber"
+                   [ngClass]="{'is-invalid':registerForm.get('ContactNumber').touched && registerForm.get('ContactNumber').invalid}"  [(ngModel)]="Customer.ContactNumber" required/>
+                  <div *ngIf="registerForm.get('ContactNumber').touched && registerForm.get('ContactNumber')?.invalid" class="invalid-feedback"></div>
+                  <div class="text-danger" *ngIf="registerForm.get('ContactNumber').errors?.required">Mobile Number is Required</div>
+                </div>
+                <div class="form-group">
+                  <label><b>Role</b></label>
+                  <input type="text" class="form-control"  formControlName="Role" name="Role"
+                   [ngClass]="{'is-invalid':registerForm.get('Role').touched && registerForm.get('Role').invalid}"  [(ngModel)]="Customer.Role" required/>
+                  <div *ngIf="registerForm.get('Role').touched && registerForm.get('Role')?.invalid" class="invalid-feedback"></div>
+                  <div class="text-danger" *ngIf="registerForm.get('Role').errors?.required">Either Customer or Admin</div>
+                </div>
+                  <div class="form-group">
+                      <button class="btn btn-success" [disabled]="!registerForm.valid" type="submit" >Register</button> &nbsp; &nbsp;
+                      <button class="btn btn-danger" >Cancel</button>
+                  </div>
+                </form>
+
+          </div>
+
+      </div>
+
+  </div>
+
+</div>
+<!--
+<div align="center" >
+  <div class="form-group">
+      <label><b>Username : </b></label>
+      <input ngModel  type="email" placeholder="Enter Email" name="email" required><br><br>
+  </div>
+  <div class="form-group">
+  <label><b>Password : </b></label>
+  <input type="password" placeholder="Enter Pasword" name="password" required><br><br>
+  </div>
+  <button type="submit">Login</button> &nbsp;&nbsp;<button type="reset">Reset</button>
+
+
+</div>-->

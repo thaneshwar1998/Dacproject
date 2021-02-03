@@ -1,0 +1,83 @@
+
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h3 >Add New Book</h3>
+                <form [formGroup]="insertForm" (ngSubmit)="insert()">
+                  <div class="form-group">
+                    <label><b>Title</b></label>
+                    <input type="text" class="form-control"  formControlName="Title" name="Title"
+                     [ngClass]="{'is-invalid':insertForm.get('Title')?.touched && insertForm.get('Title')?.invalid}" placeholder="xyz" [(ngModel)]="book.Title" required>
+                    <div *ngIf="insertForm.get('Title')?.touched && insertForm.get('Name')?.invalid" class="invalid-feedback"></div>
+                    <div class="text-danger" *ngIf="insertForm.get('Title').errors?.required">Title is Required</div>
+                </div>
+                <div class="form-group">
+                  <label><b>Author</b></label>
+                  <input type="text" class="form-control"  formControlName="Author" name="Author"
+                   [ngClass]="{'is-invalid':insertForm.get('Author')?.touched && insertForm.get('Author')?.invalid}" placeholder="xyz" [(ngModel)]="book.Author" required>
+                  <div *ngIf="insertForm.get('Author')?.touched && insertForm.get('Author')?.invalid" class="invalid-feedback"></div>
+                  <div class="text-danger" *ngIf="insertForm.get('Author').errors?.required">Author is Required</div>
+              </div>
+                    <div class="form-group">
+                        <label><b>Image</b></label>
+                        <img [src]="imageUrl"  style="width: 250px;height: 200px;">
+                        <input type="file" class="form-control"    name="ImageUrl" (change)="handleFileInput($event.target.files)" accept="Images/*" #Image placeholder="Add Images of Book" [(ngModel)]="book.ImageUrl" required>
+                    </div>
+                    <div class="form-group">
+                      <label><b>Description</b></label>
+                      <input type="text" class="form-control"  formControlName="Description" name="Description"
+                       [ngClass]="{'is-invalid':insertForm.get('Description')?.touched && insertForm.get('Description')?.invalid}" placeholder="xyz" [(ngModel)]="book.Description" required>
+                      <div *ngIf="insertForm.get('Description')?.touched && insertForm.get('Description')?.invalid" class="invalid-feedback"></div>
+                      <div class="text-danger" *ngIf="insertForm.get('Description').errors?.required">Author is Required</div>
+                  </div>
+                  <div class="form-group">
+                    <label><b>Price</b></label>
+                    <input type="number" class="form-control"  formControlName="Price" name="Price"
+                     [ngClass]="{'is-invalid':insertForm.get('Price')?.touched && insertForm.get('Price')?.invalid}" placeholder="0.00" [(ngModel)]="book.Price" required>
+                    <div *ngIf="insertForm.get('Price')?.touched && insertForm.get('Price')?.invalid" class="invalid-feedback"></div>
+                    <div class="text-danger" *ngIf="insertForm.get('Price').errors?.required">Price is Required</div>
+                </div>
+                <div class="form-group">
+                  <label><b>Quantity</b></label>
+                  <input type="number" class="form-control"  formControlName="Quantity" name="Quantity"
+                   [ngClass]="{'is-invalid':insertForm.get('Quantity')?.touched && insertForm.get('Quantity')?.invalid}" placeholder="0.00" [(ngModel)]="book.Quantity" required>
+                  <div *ngIf="insertForm.get('Quantity')?.touched && insertForm.get('Quantity')?.invalid" class="invalid-feedback"></div>
+                  <div class="text-danger" *ngIf="insertForm.get('Quantity').errors?.required">Quantity is Required</div>
+              </div>
+                    <div class="form-group">
+                      <label><b>Language</b></label>
+                      <input type="text" class="form-control"   name="Language" placeholder="English" [(ngModel)]="book.Language" required>
+                    </div>
+                    <div class="form-group">
+                      <label><b>Category</b></label>
+                      <input type="text" class="form-control"  formControlName="Category" name="Category"
+                       [ngClass]="{'is-invalid':insertForm.get('Category')?.touched && insertForm.get('Category')?.invalid}" placeholder="0.00" [(ngModel)]="book.Category" required>
+                      <div *ngIf="insertForm.get('Category')?.touched && insertForm.get('Category')?.invalid" class="invalid-feedback"></div>
+                      <div class="text-danger" *ngIf="insertForm.get('Category').errors?.required">Category is Required</div>
+                  </div>
+                    <div class="form-group">
+                      <label><b>Rating</b></label>
+                      <input type="number" class="form-control"   name="Rating" placeholder="Out of Five" [(ngModel)]="book.Rating" required>
+                    </div>
+                    <div class="form-group">
+                      <label><b>Book Condition</b></label>
+                      <input type="text" class="form-control"   name="Condition" placeholder="Good Average Bad" [(ngModel)]="book.Condition" required>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary" type="submit">ADD</button> &nbsp; &nbsp;
+                        <button class="btn btn-danger" >Cancel</button>
+
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+

@@ -1,0 +1,82 @@
+<html>
+  <head>
+    <script>
+
+
+    </script>
+  </head>
+  <body>
+    <div class="jumbotron">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-6">
+                  <h3>Order Details</h3>
+
+             <!-- <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Success !</strong> You Logged In Successfully !!!!!
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>-->
+
+                  <form name="form" [formGroup]="form" (ngSubmit)="MakePayemt()">
+
+                      <div class="form-group">
+                          <label><b>Book Name</b></label>
+                          <input type="text" class="form-control" [disabled]="book.Title"
+                          formControlName="Title" [ngClass]="{'is-valid':form.get('Title')?.touched && form.get('Title').invalid}" name="Title"   [(ngModel)]="book.Title"   required>
+                      </div>
+                      <div class="form-group">
+                        <label><b>Price</b></label>
+                        <input type="number" class="form-control" [disabled]="book.Price"
+                        formControlName="Price" [ngClass]="{'is-valid':form.get('Price')?.touched && form.get('Price').invalid}"   name="Price"  [(ngModel)]="book.Price"  required>
+                    </div>
+                    <div class="form-group">
+                      <label><b>Quantity</b></label>
+                      <input type="number" class="form-control"
+                      formControlName="Quantity" [ngClass]="{'is-valid':form.get('Quantity')?.touched && form.get('Quantity').invalid}"   name="Quantity" [(ngModel)]="orders.Quantity"  required>
+                    </div>
+                    <div class="form-group">
+                      <label><b>Total Price</b></label>
+                      <input type="number" class="form-control"
+                      formControlName="TotalPrice" [ngClass]="{'is-valid':form.get('TotalPrice')?.touched && form.get('TotalPrice').invalid}"  name="TotalPrice"  [(ngModel)]="orders.TotalPrice" (click)="calculate(book.Price,orders.Quantity)"     required>
+
+                    </div>
+                    <div class="form-group">
+                      <label><b>Date</b></label>
+                      <input type="date" class="form-control"
+                      formControlName="OrderDate" [ngClass]="{'is-valid':form.get('OrderDate')?.touched && form.get('OrderDate').invalid}"  name="OrderDate"  [(ngModel)]="orders.OrderDate" (click)="TodayDate()"  required>
+                    </div>
+                      <div class="form-group">
+                          <button class="btn btn-success" type="submit" >Pay Now</button> &nbsp; &nbsp;
+                          <button class="btn btn-danger" >Cancel</button>
+
+                      </div>
+                  </form>
+
+              </div>
+
+          </div>
+
+      </div>
+
+    </div>
+
+
+  </body>
+</html>
+
+
+<!--
+<div align="center" >
+  <div class="form-group">
+      <label><b>Username : </b></label>
+      <input ngModel  type="email" placeholder="Enter Email" name="email" required><br><br>
+  </div>
+  <div class="form-group">
+  <label><b>Password : </b></label>
+  <input type="password" placeholder="Enter Pasword" name="password" required><br><br>
+  </div>
+  <button type="submit">Login</button> &nbsp;&nbsp;<button type="reset">Reset</button>
+
+</div>-->

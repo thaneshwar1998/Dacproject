@@ -1,0 +1,57 @@
+
+
+<div class="jumbotron">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-6">
+              <h3>Delivery Details</h3>
+
+         
+              <form  (ngSubmit)="showReceipt()" >
+
+                  <div class="form-group">
+                  <label><b>Full Name</b></label>
+                  <input type="text" class="form-control" name="FullName"  [ngModel]="shipment.FullName" required>
+                  </div>
+                  <div class="form-group">
+                    <label><b>Mobile Number</b></label>
+                    <input type="number" class="form-control"  name="MoileNumber" [ngModel]="shipment.MobileNumber" required>
+                </div>
+                  <div class="form-group">
+                      <label><b>House No.,Building Name</b></label>
+                      <input type="text" class="form-control"  name="BuildingName" [ngModel]="shipment.BuildingName"  required>
+                  </div>
+                  <div class="form-group">
+                    <label><b>Road Name, Area, Colony</b></label>
+                    <input type="text" class="form-control"  name="Area" [ngModel]="shipment.Area" required>
+                  </div>
+                <div class="form-group">
+                  <label><b>State</b></label>
+                  <input type="text" class="form-control"  name="State" [ngModel]="shipment.State" required>
+                </div>
+                <div class="form-group">
+                  <label><b>City</b></label>
+                  <input type="text" class="form-control"  name="City"  [ngModel]="shipment.City" required>
+                </div>
+                <div class="form-group">
+                  <label><b>Pincode</b></label>
+                  <input type="number" class="form-control"  name="Pincode" [ngModel]="shipment.Pincode"  required>
+                </div>
+                  <div class="form-group">
+                      <button class="btn btn-success" type="submit" >Submit</button> &nbsp; &nbsp;
+                      <button class="btn btn-danger" >Cancel</button>
+
+                  </div>
+
+              </form>
+
+          </div>
+
+      </div>
+
+  </div>
+
+</div>
+
+
+
